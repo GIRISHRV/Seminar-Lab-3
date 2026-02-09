@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gold Master Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#050505", // Deep black/almost black
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #9293c9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #ffffff 30%, #6467f2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-ring {
+            position: relative;
+        }
+        .glow-ring::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 9999px;
+            background: linear-gradient(45deg, #6467f2, #a855f7, #6467f2);
+            z-index: -1;
+            filter: blur(8px);
+            opacity: 0.7;
+        }
+        .glow-ring::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 9999px;
+            background: #111; /* Match card bg roughly */
+            z-index: -1;
+        }
+        
+        /* Subtle mesh gradients */
+        .mesh-gradient-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(100, 103, 242, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -100px;
+            left: -100px;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .mesh-gradient-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -50px;
+            right: -50px;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .btn-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover-effect:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(100, 103, 242, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px -5px rgba(100, 103, 242, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Ambient Background Effects -->
+<div class="mesh-gradient-1"></div>
+<div class="mesh-gradient-2"></div>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Glassmorphism Card -->
+<div class="w-full max-w-md glass-card rounded-2xl p-8 sm:p-10 flex flex-col items-center">
+<!-- Header/Tagline -->
+<div class="mb-8 text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] uppercase tracking-widest font-bold text-gray-400">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    Gold Master Profile
+                </span>
+</div>
+<!-- Profile Section -->
+<div class="flex flex-col items-center text-center w-full mb-8">
+<!-- Avatar with glowing ring -->
+<div class="glow-ring mb-6">
+<div class="relative w-28 h-28 rounded-full overflow-hidden border-2 border-black/50">
+<img alt="Professional headshot of a developer smiling slightly" class="w-full h-full object-cover" data-alt="Professional headshot of a developer smiling slightly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWzlp5QaQWvw-Usb6SKNq_vpmhfQCggpqAwRsIF0ck-LZ6-RiPs20LrX7w7hF2dr99jkynl2wxO55S2gRsPXZvhxsmFnNXK8F7c_tGXRH8BliodGAgFWp7G-e8IAIAZYi2jEi05nmJw129bAKjaAW7HplXTfMpX2ILwlsDb43tzxzAwhgYXvfpi5sPOBshJGNEomwPNTaqwYnUZ4oduU-4cJwlbAkcXYZt3ZArXxa4skFejF3Vm7TlF98b1iRDQQhB-zvbbHT0LeI"/>
+</div>
+</div>
+<!-- Identity -->
+<h1 class="text-3xl font-bold tracking-tight text-white mb-2">Alex Developer</h1>
+<p class="text-lg font-medium text-gradient-primary mb-4">Full Stack Engineer &amp; UI Enthusiast</p>
+<!-- Bio -->
+<p class="text-gray-400 text-sm leading-relaxed max-w-[300px]">
+                    Building digital experiences that matter. Obsessed with performance, accessibility, and pixel-perfect design.
+                </p>
+</div>
+<!-- Links Section -->
+<div class="w-full flex flex-col gap-3">
+<!-- Github Button -->
+<a class="group btn-hover-effect flex items-center justify-between w-full p-4 rounded-xl bg-white/5 border border-white/5 text-white decoration-none" href="#">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-black/40 text-white group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-semibold text-sm">GitHub</span>
+<span class="text-xs text-gray-500">@alexdev</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300">chevron_right</span>
+</a>
+<!-- LinkedIn Button -->
+<a class="group btn-hover-effect flex items-center justify-between w-full p-4 rounded-xl bg-white/5 border border-white/5 text-white decoration-none" href="#">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-black/40 text-white group-hover:text-[#0077b5] transition-colors">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-semibold text-sm">LinkedIn</span>
+<span class="text-xs text-gray-500">Connect with me</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300">chevron_right</span>
+</a>
+<!-- Portfolio Button -->
+<a class="group btn-hover-effect flex items-center justify-between w-full p-4 rounded-xl bg-white/5 border border-white/5 text-white decoration-none" href="#">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-black/40 text-white group-hover:text-purple-400 transition-colors">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-semibold text-sm">Portfolio</span>
+<span class="text-xs text-gray-500">View my latest work</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300">chevron_right</span>
+</a>
+<!-- Blog Button -->
+<a class="group btn-hover-effect flex items-center justify-between w-full p-4 rounded-xl bg-white/5 border border-white/5 text-white decoration-none" href="#">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-black/40 text-white group-hover:text-emerald-400 transition-colors">
+<span class="material-symbols-outlined">rss_feed</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-semibold text-sm">Blog</span>
+<span class="text-xs text-gray-500">Thoughts on Tech</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300">chevron_right</span>
+</a>
+</div>
+<!-- Social Footer -->
+<div class="mt-10 flex gap-6">
+<a class="text-gray-500 hover:text-white transition-colors transform hover:scale-110" href="#">
+<span class="sr-only">X / Twitter</span>
+<!-- Simple SVG for X logo as Material Symbols doesn't have brands usually -->
+<svg aria-hidden="true" class="h-5 w-5 fill-current" viewbox="0 0 24 24">
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+</svg>
+</a>
+<a class="text-gray-500 hover:text-white transition-colors transform hover:scale-110" href="#">
+<span class="sr-only">Email</span>
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+<a class="text-gray-500 hover:text-white transition-colors transform hover:scale-110" href="#">
+<span class="sr-only">Copy Link</span>
+<span class="material-symbols-outlined text-[20px]">link</span>
+</a>
+</div>
+</div>
+</main>
+</body></html>

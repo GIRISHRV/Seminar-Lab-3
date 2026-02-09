@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Creation Onboarding</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6467f2",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101122",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Aurora Background Utilities */
+        .aurora-bg {
+            background-color: #05050a; /* Very deep black */
+            overflow: hidden;
+        }
+        
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input Styles */
+        .input-minimal {
+            background: transparent;
+            border-bottom-width: 1px;
+            border-color: rgba(255, 255, 255, 0.2);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .input-minimal:focus {
+            box-shadow: none;
+            border-color: #6467f2; /* Primary Color */
+        }
+
+        /* Button Glow */
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(100, 103, 242, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(100, 103, 242, 0.6);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-white min-h-screen flex flex-col">
+<!-- Aurora Background Wrapper -->
+<div class="relative w-full min-h-screen flex items-center justify-center aurora-bg">
+<!-- Animated Gradient Blobs -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+<div class="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob"></div>
+<div class="absolute top-[-10%] right-[20%] w-[500px] h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-blob animation-delay-2000"></div>
+<div class="absolute bottom-[-20%] left-[30%] w-[600px] h-[600px] bg-teal-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-30 animate-blob animation-delay-4000"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 w-full max-w-[580px] px-6">
+<!-- Glass Card -->
+<div class="glass-card rounded-2xl p-8 md:p-12 flex flex-col items-center w-full">
+<!-- Header -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 mb-4 text-primary">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3">Build Your Identity</h1>
+<p class="text-gray-400 text-sm md:text-base font-normal">Let's set up your Gold Master developer profile.</p>
+</div>
+<!-- Form -->
+<div class="w-full space-y-8">
+<!-- Row 1: Full Name -->
+<div class="group relative">
+<label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-1" for="fullName">Full Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-gray-500 text-[20px] pointer-events-none group-focus-within:text-primary transition-colors">badge</span>
+<input class="input-minimal w-full pl-8 py-3 text-white placeholder-gray-600 focus:ring-0 text-lg" id="fullName" placeholder="e.g. Alex Chen" type="text"/>
+</div>
+</div>
+<!-- Row 2: Professional Headline -->
+<div class="group relative">
+<label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-1" for="headline">Professional Headline</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-gray-500 text-[20px] pointer-events-none group-focus-within:text-primary transition-colors">work</span>
+<input class="input-minimal w-full pl-8 py-3 text-white placeholder-gray-600 focus:ring-0 text-lg" id="headline" placeholder="e.g. Senior React Engineer" type="text"/>
+</div>
+</div>
+<!-- Row 3: Location -->
+<div class="group relative">
+<label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-1" for="location">Location</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-0 text-gray-500 text-[20px] pointer-events-none group-focus-within:text-primary transition-colors">location_on</span>
+<input class="input-minimal w-full pl-8 py-3 text-white placeholder-gray-600 focus:ring-0 text-lg" id="location" placeholder="e.g. San Francisco, CA" type="text"/>
+</div>
+</div>
+<!-- Row 4: Bio -->
+<div class="group relative">
+<label class="block text-xs font-medium text-gray-400 uppercase tracking-wider mb-1" for="bio">Bio</label>
+<div class="relative">
+<textarea class="input-minimal w-full py-3 text-white placeholder-gray-600 focus:ring-0 resize-none text-base leading-relaxed scrollbar-hide" id="bio" placeholder="Tell the world about your code philosophy..." rows="3"></textarea>
+<div class="absolute bottom-2 right-0 text-xs text-gray-600">0/160</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="w-full mt-12 mb-6">
+<button class="btn-glow w-full rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold h-14 text-lg tracking-wide flex items-center justify-center gap-2 transform transition-transform active:scale-[0.98]">
+<span>Create Profile</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Progress Dots -->
+<div class="flex items-center gap-3">
+<div class="h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_rgba(100,103,242,0.8)]"></div>
+<div class="h-2 w-2 rounded-full bg-gray-700"></div>
+<div class="h-2 w-2 rounded-full bg-gray-700"></div>
+</div>
+</div>
+<!-- Footer Link -->
+<div class="text-center mt-6">
+<p class="text-gray-500 text-sm">Already have an account? <a class="text-primary hover:text-white transition-colors" href="#">Log in</a></p>
+</div>
+</div>
+</div>
+</body></html>
